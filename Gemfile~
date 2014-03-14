@@ -2,6 +2,18 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
+# additional gems
+gem 'bootstrap-sass'
+gem 'bcrypt'
+gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
+group :development do
+	gem 'sqlite3'
+	gem 'annotate'
+end
+
 
 # Use mysql as the database for Active Record
 gem 'mysql2'
@@ -43,3 +55,22 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :test, :development do
+	gem 'rspec-rails'
+	gem 'guard-rspec'
+	gem 'guard-spork'
+	gem 'spork'
+end
+
+group :test do
+	gem 'capybara'
+	gem 'factory_girl_rails'
+	gem 'cucumber-rails'
+	gem 'database_cleaner'
+end
+
+group :production do
+	gem 'pg'
+end	
+
